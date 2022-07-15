@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+    <head th:replace="layout/layout :: head">
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container" layout:fragment="page-content"> 
+            <h2 th:text="${titulo}" class="mt-3"></h2>
+            <hr>
+            <form th:action="@{/prod/add}" method="post" enctype="multipart/form-data" th:object="${escuela}">                    
+                <div class="mb-3">
+                    <input type="hidden" th:field="*{idescuela}">
+                    <label for="recipient-name" class="col-form-label">Nombre:</label>
+                    <input type="text" th:field="*{nombre}" class="form-control" name="nombre">
+                </div>
+                 <div class="mb-3">
+                    <input type="hidden" th:field="*{idescuela}">
+                    <label for="recipient-name" class="col-form-label">Estudiantes:</label>
+                    <input type="text" th:field="*{estudiantes}" class="form-control" name="nombre">
+                </div>
+                <div class="mb-3">
+                    <input type="hidden" th:field="*{idescuela}">
+                    <label for="recipient-name" class="col-form-label">Jalados:</label>
+                    <input type="text" th:field="*{jalados}" class="form-control" name="nombre">
+                </div>
+                <div class="mb-3">
+                    <input type="hidden" th:field="*{idescuela}">
+                    <label for="recipient-name" class="col-form-label">Notas:</label>
+                    <input type="text" th:field="*{notas}" class="form-control" name="nombre">
+                </div>
+                
+                
+                <a th:href="@{/prod/all}" class="btn btn-secondary" >Cancel</a>
+                <input type="submit" class="btn btn-primary"/>
+            </form>
+        </div>
+    </body>
+</html>
