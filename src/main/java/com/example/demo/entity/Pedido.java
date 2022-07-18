@@ -12,26 +12,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- *
- * @author mijael
- */
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "escuela")
+@Table(name = "pedidos")
 @Entity
-public class Escuela implements Serializable {
+public class Pedido implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     
-    private int idescuela;
+    private int idpedido;
     @Column(unique=true)
-    private String nombre; 
-    private int estudiantes;
-    private String jalados;
-    private int notas;
+    private String cliente; 
+    private String fecha_pedido;
+    private String reparto;
+    private String producto;
+    private int cantidad;
+    private int precio;
   
 }

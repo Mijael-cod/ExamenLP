@@ -21,7 +21,7 @@ import com.example.demo.servicios.EscuelaService;
 
 
 @Controller
-@RequestMapping("/prod")
+@RequestMapping("/cate")
 
 public class EscuelaController {
     
@@ -32,7 +32,7 @@ public class EscuelaController {
     public String listarEsc(Model model){
         //String keyword = "Yogurt";
         model.addAttribute("escuela", escuelaService.readAll());
-        return "prod/listarEsc";
+        return "cate/listarEsc";
     }
     
     @GetMapping("/form")
